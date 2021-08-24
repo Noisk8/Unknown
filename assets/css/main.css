@@ -2316,3 +2316,9 @@ input, select, textarea {
 	text-align: center;
 	margin: 0 auto;
 }
+
+#buque
+{
+  width:100%;
+    max-width:400px;
+}
