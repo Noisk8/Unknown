@@ -14,5 +14,22 @@ export class HomeComponent {
   tasks = signal(['Instar la bazuca',
    'Soplar en boranda', 
    'Comprar el Tufy']);
-  
+
+   changeHandler(event: Event)
+  {
+const input = event.target as HTMLInputElement
+
+const newTask = input.value
+this.tasks.update((tasks) => [...tasks, newTask]);
+  }
+
+  deleteTask(index: number){
+
+    this.tasks.update((tasks)=>tasks.filter((task,position) => position !== index));
+    
+
+
+
+
+  }
 }
