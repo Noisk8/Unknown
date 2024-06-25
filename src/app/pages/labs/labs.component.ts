@@ -11,7 +11,8 @@ import { CommonModule } from '@angular/common';
 export class LabsComponent {
   title = 'todoapp';
   sobeland = 'sobelo pai!';
-  tasks = ['Instar la bazuca', 'Soplar en boranda', 'Comprar el Tufy'];
+
+  tasks = signal(['Instar la bazuca', 'Soplar en boranda', 'Comprar el Tufy']);
 
   name = signal('Noisk8') ;
   age = '18';
