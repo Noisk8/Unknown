@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,7 +13,7 @@ export class LabsComponent {
   sobeland = 'sobelo pai!';
   tasks = ['Instar la bazuca', 'Soplar en boranda', 'Comprar el Tufy'];
 
-  name = 'Noisk8';
+  name = signal('Noisk8') ;
   age = '18';
   disabled = true;
   img = 'https://perfil2024.vercel.app/assets/images/noi.jpg';
@@ -30,7 +30,9 @@ export class LabsComponent {
   }
 
   changeHnadler(event: Event) {
-    console.log(event);
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.name.set(newValue)
   }
 
   keydownHandler(event: KeyboardEvent) {
